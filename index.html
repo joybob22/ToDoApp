@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ToDo App</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>ToDo App</title>
+    </head>
+    <body ng-app="todoApp">
 
-</body>
+        <h1>ToDo</h1>
+        <button ui-sref="home">click for home</button>
+        <button ui-sref="todo">click for todo</button>
+        <div ui-view></div>
+
+    </body>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+    <script src="app.js"></script>
 </html>

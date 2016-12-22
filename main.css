@@ -1,0 +1,26 @@
+html, body, h1, h2, h3, h4, h5, h6, p, span, div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#navBar {
+    width: 100%;
+}
+
+.navItem {
+    float: left;
+    width: 50%;
+    text-align: center;
+    background-color: lightsteelblue;
+    box-sizing: border-box;
+    transition: all 0.7s;
+    font-size: 35px;
+    padding: 5px 0;
+    font-family: Helvetica;
+}
+
+.navItem:hover {
+    background-color: cornflowerblue;
+    cursor: pointer;
+}

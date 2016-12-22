@@ -3,12 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <title>ToDo App</title>
+        <link rel="stylesheet" href="main.css">
     </head>
     <body ng-app="todoApp">
+        <div id="navBar">
+            <div class="navItem" ui-sref="home">Home</div>
+            <div class="navItem" ui-sref="todo">Todo</div>
+        </div>
 
-        <h1>ToDo</h1>
-        <button ui-sref="home">click for home</button>
-        <button ui-sref="todo">click for todo</button>
         <div ui-view></div>
 
     </body>

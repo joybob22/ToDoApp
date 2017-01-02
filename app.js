@@ -17,12 +17,12 @@
 
             .state("home", {
                 url: "/home",
-                templateUrl: "views/home.html"               /**   add home template   */
+                template: "<component-home></component-home>"               /**   add home template   */
             })
 
             .state("todo", {
                 url: "/todo",
-                templateUrl: "views/todo.html"               /**   add todo template   */
+                template: "<component-todo></component-todo>"               /**   add todo template   */
             })
 
     })

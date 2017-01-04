@@ -41,6 +41,9 @@
 
         fun.removeList = function(index) {
             todoService.removeList(index);
+            if(fun.selected === (index + 1)) {
+                fun.selected--;
+            }
         }
 
     }

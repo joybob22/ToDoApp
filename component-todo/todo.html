@@ -1,3 +1,27 @@
 <div id="todoContainer">
+    <div id="listOfLists">
+        <h1 id="listsHeader">Your Lists</h1>
+            <div id="listItem0" class="listTitles" ng-click="$ctrl.select(0)">
+                <span>Create a List</span>
+            </div>
+
+        <div ng-repeat="info in $ctrl.information">
+            <div id="listItem{{$index + 1}}" class="listTitles" ng-click="$ctrl.select($index + 1)">
+                <span class="fa fa-times" ng-if="$ctrl.editingLists" ng-click="$ctrl.removeList($index)"></span><span > {{info.name}}</span>
+            </div>
+        </div>
+    </div>
+    <div id="todo">
+        <div ng-if="$ctrl.selected === 0">
+                <div id="removeListButton" ng-click="$ctrl.removingListOptions()">Remove a List</div>
+            <h1 class="todoHeader">Create a List</h1>
+            <div id="createForm">
+                <input id="createInput" ng-keyup="$ctrl.addList($event)" type="text" placeholder="Type here to create a list name">
+            </div>
+        </div>
+        <div ng-repeat="info in $ctrl.information">
+
+        </div>
+    </div>
 
 </div>

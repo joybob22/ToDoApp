@@ -72,3 +72,94 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#listOfLists {
+    width: 200px;
+    float: left;
+}
+
+#todo {
+    margin-left: 200px;
+}
+
+#listsHeader {
+    font-family: angelTears;
+    font-size: 35px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.listTitles {
+    font-size: 25px;
+    padding: 15px 5px 15px 10px;
+    font-weight: 300;
+    font-family: Helvetica;
+    transition: background-color 0.7s;
+}
+
+.listTitles:hover {
+    background-color: #700000;
+    cursor: pointer;
+}
+
+.selected {
+    border-right: 5px solid #600000;
+}
+
+.todoHeader {
+    text-align: center;
+    padding-top: 140px;
+    font-family: angelTears;
+    font-size: 80px;
+}
+
+#createForm {
+    width: 80%;
+    margin: 20px auto 0 auto;
+}
+
+#createInput {
+    width: 100%;
+    height: 50px;
+    font-size: 35px;
+    background-color: rgba(170, 0, 0, 0.3);
+    border: 1px solid #500;
+    outline: none;
+    padding-left: 10px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #CCCCCC;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #CCCCCC;
+    opacity:  1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #CCCCCC;
+    opacity:  1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    #CCCCCC;
+}
+
+#removeListButton {
+    float: left;
+    margin-top: 45px;
+    margin-left: 15px;
+    padding: 10px 20px;
+    background-color: #900000;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-size: 20px;
+    font-family: Helvetica;
+    transition: all 0.5s;
+}
+
+#removeListButton:hover {
+    cursor: pointer;
+    background-color: #c00000;
+}

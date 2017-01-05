@@ -13,13 +13,23 @@
     </div>
     <div id="todo">
         <div ng-if="$ctrl.selected === 0">
-                <div id="removeListButton" ng-click="$ctrl.removingListOptions()">Remove a List</div>
+                <div class="removeListButton" ng-click="$ctrl.removingListOptions()">{{$ctrl.buttonWords}}</div>
             <h1 class="todoHeader">Create a List</h1>
             <div id="createForm">
                 <input id="createInput" ng-keyup="$ctrl.addList($event)" type="text" placeholder="Type here to create a list name">
             </div>
         </div>
         <div ng-repeat="info in $ctrl.information">
+            <div ng-if="$ctrl.selected === ($index + 1)">
+                <div class="removeListButton" ng-click="$ctrl.removingListOptions()">{{$ctrl.buttonWords}}</div>
+                <h1 class="todoHeader">{{info.name}}</h1>
+                <div class="taskContainer">
+                    <input class="taskInput" type="text" placeholder="What needs to be done?" ng-keyup="$ctrl.addTask($event, $index)">
+                    <div ng-repeat="task in $ctrl.information[$index].tasks track by $index">
+                        <div class="tasks">{{task}}</div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>

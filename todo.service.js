@@ -14,12 +14,16 @@
         serve.theTodos = [];
 
         serve.addList = function(input) {
-            serve.theTodos.push({"name": input, "id": id});
+            serve.theTodos.push({"name": input, "id": id, "tasks": []});
             id++;
         };
 
         serve.removeList = function(index) {
             serve.theTodos.splice(index, 1);
+        };
+
+        serve.addTask = function(input, index) {
+            serve.theTodos[index].tasks[serve.theTodos[index].tasks.length] = input;
         }
     }
 

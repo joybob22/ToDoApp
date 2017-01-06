@@ -8,7 +8,7 @@
         controller: todoController
     });
 
-    function todoController(todoService) {
+    function todoController(todoService, $scope) {
         var fun = this;
         fun.buttonWords = "Edit Lists";
         fun.information = todoService.theTodos;
@@ -22,6 +22,9 @@
             $("#listItem" + fun.selected).removeClass("selected");
             fun.selected = info;
             $("#listItem" + info).addClass("selected");
+            if(info !== 0) {
+                todoService.reapplyClasses((info - 1));
+            }
         };
 
         fun.addList = function(key) {
@@ -71,15 +74,17 @@
         fun.markComplete = function(index, parentIndex) {
             if(!(todoService.theTodos[parentIndex].tasksComplete[index])) {
                 todoService.markComplete(index, parentIndex);
-                $("#completeCheckbox" + index).addClass("checkBoxComplete");
-                $("#taskWords" + index).addClass("taskWordsComplete");
             } else {
                 todoService.unMarkComplete(index, parentIndex);
-                $("#completeCheckbox" + index).removeClass("checkBoxComplete");
-                $("#taskWords" + index).removeClass("taskWordsComplete");
             }
 
         };
+
+        fun.deleteTask = function(index, parentIndex) {
+            todoService.deleteTask(index, parentIndex);
+        };
+
+
 
         function noSpaces(input) {
             for(var i = 0; i < input.length; i++) {

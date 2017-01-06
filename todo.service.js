@@ -35,6 +35,31 @@
         serve.unMarkComplete = function(index, parentIndex) {
             serve.theTodos[parentIndex].tasksComplete[index] = false;
         };
+
+        serve.deleteTask = function(index, parentIndex) {
+            serve.theTodos[parentIndex].tasks.splice(index, 1);
+            serve.theTodos[parentIndex].tasksComplete.splice(index, 1);
+            serve.reapplyClasses(parentIndex);
+        };
+
+
+
+        serve.reapplyClasses = function(parentIndex) {
+            var info = serve.theTodos[parentIndex];
+            for(var i = 0; i < info.tasks.length; i++) {
+                if(info.tasksComplete[i]) {
+                    if(!($("#completeCheckbox" + i).hasClass("checkBoxComplete"))) {
+                        $("#completeCheckbox" + i).addClass("checkBoxComplete");
+                        $("#taskWords" + i).addClass("taskWordsComplete");
+                    }
+                } else {
+                    if($("#completeCheckbox" + i).hasClass("checkBoxComplete")) {
+                        $("#completeCheckbox" + i).removeClass("checkBoxComplete");
+                        $("#taskWords" + i).removeClass("taskWordsComplete");
+                    }
+                }
+            }
+        }
     }
 
 })();

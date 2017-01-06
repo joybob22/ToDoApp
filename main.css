@@ -197,6 +197,7 @@ body {
 
 .completeCheckbox:hover {
     background-color: rgba(100, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .checkBoxComplete {
@@ -205,4 +206,16 @@ body {
 
 .taskWordsComplete {
     color: rgba(300, 300, 300, 0.3);
+}
+
+.deleteTask {
+    float: right;
+    margin-right: 20px;
+    transition: all 0.3s;
+    color: rgba(100, 0, 0, 0.5);
+}
+
+.deleteTask:hover {
+    color: rgba(100, 0, 0, 0.8);
+    cursor: pointer;
 }

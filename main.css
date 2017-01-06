@@ -4,8 +4,12 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, div {
     border: 0;
 }
 
-body, html {
-    height: 100%;
+body {
+    background-image: url("flower blue.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
 }
 
 @font-face {
@@ -43,11 +47,7 @@ body, html {
 
 .container {
     height: 100%;
-    background-image: url("waterfallMountains.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+
 }
 
 #intro {
@@ -66,11 +66,6 @@ body, html {
 
 #todoContainer {
     height: 100%;
-    background-image: url("flower blue.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: repeat;
-    background-size: cover;
 }
 
 #listOfLists {
@@ -125,9 +120,9 @@ body, html {
     background-color: rgba(170, 0, 0, 0.3);
     border: 1px solid #500;
     outline: none;
-    padding-left: 10px;
     text-align: center;
     box-sizing: border-box;
+    border-collapse: collapse;
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -170,5 +165,44 @@ body, html {
     width: 80%;
     margin: 0 auto;
     margin-top: 20px;
+    border-collapse: collapse;
+    margin-bottom: 100px;
 }
 
+.tasks {
+    width: 100%;
+    font-size: 35px;
+    background-color: rgba(170, 0, 0, 0.3);
+    border-left: 1px solid #500;
+    border-right: 1px solid #500;
+    border-bottom: 1px solid #500;
+    padding: 5px 0 5px 20px;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    color: whitesmoke;
+    font-family: Helvetica;
+    font-weight: 300;
+    transition: all 0.3s;
+}
+
+.completeCheckbox {
+    margin: 5px 10px 0 0;
+    border-radius: 100px;
+    height: 30px;
+    width: 30px;
+    border: 1px solid #500;
+    float: left;
+    transition: all 0.3s;
+}
+
+.completeCheckbox:hover {
+    background-color: rgba(100, 0, 0, 0.2);
+}
+
+.checkBoxComplete {
+    background-color: rgba(100, 0, 0, 0.4);
+}
+
+.taskWordsComplete {
+    color: rgba(300, 300, 300, 0.3);
+}

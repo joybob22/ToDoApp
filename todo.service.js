@@ -14,7 +14,7 @@
         serve.theTodos = [];
 
         serve.addList = function(input) {
-            serve.theTodos.push({"name": input, "id": id, "tasks": []});
+            serve.theTodos.push({"name": input, "id": id, "tasks": [], "tasksComplete": []});
             id++;
         };
 
@@ -23,8 +23,18 @@
         };
 
         serve.addTask = function(input, index) {
-            serve.theTodos[index].tasks[serve.theTodos[index].tasks.length] = input;
-        }
+            var index2 = serve.theTodos[index].tasks.length;
+            serve.theTodos[index].tasks[index2] = input;
+            serve.theTodos[index].tasksComplete[index2] = false;
+        };
+
+        serve.markComplete = function(index, parentIndex) {
+            serve.theTodos[parentIndex].tasksComplete[index] = true;
+        };
+
+        serve.unMarkComplete = function(index, parentIndex) {
+            serve.theTodos[parentIndex].tasksComplete[index] = false;
+        };
     }
 
 })();

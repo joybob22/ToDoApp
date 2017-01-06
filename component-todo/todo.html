@@ -26,7 +26,10 @@
                 <div class="taskContainer">
                     <input class="taskInput" type="text" placeholder="What needs to be done?" ng-keyup="$ctrl.addTask($event, $index)">
                     <div ng-repeat="task in $ctrl.information[$index].tasks track by $index">
-                        <div class="tasks">{{task}}</div>
+                        <div class="tasks">
+                            <div id="completeCheckbox{{$index}}" class="completeCheckbox" ng-click="$ctrl.markComplete($index, $parent.$index)"></div>
+                            <span id="taskWords{{$index}}">{{task}}</span>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -52,10 +52,24 @@
         };
 
         fun.addTask = function(key, index) {
-            if(key.keyCode === 13) {
-                var input = $(".taskInput").val();
+            var input = $(".taskInput").val();
+            if(key.keyCode === 13 && input !== "") {
                 todoService.addTask(input, index);
+                $(".taskInput").val("");
             }
+        };
+
+        fun.markComplete = function(index, parentIndex) {
+            if(!(todoService.theTodos[parentIndex].tasksComplete[index])) {
+                todoService.markComplete(index, parentIndex);
+                $("#completeCheckbox" + index).addClass("checkBoxComplete");
+                $("#taskWords" + index).addClass("taskWordsComplete");
+            } else {
+                todoService.unMarkComplete(index, parentIndex);
+                $("#completeCheckbox" + index).removeClass("checkBoxComplete");
+                $("#taskWords" + index).removeClass("taskWordsComplete");
+            }
+
         }
 
     }

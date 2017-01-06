@@ -26,9 +26,13 @@
 
         fun.addList = function(key) {
             var input = $("#createInput").val();
-            if(key.keyCode == 13 && input !== "") {
-                todoService.addList(input);
-                $("#createInput").val("");
+            if(key.keyCode == 13) {
+                if(noSpaces(input)) {
+                    todoService.addList(input);
+                    $("#createInput").val("");
+                } else {
+                    $("#createInput").val("");
+                }
             }
         };
 
@@ -53,9 +57,14 @@
 
         fun.addTask = function(key, index) {
             var input = $(".taskInput").val();
-            if(key.keyCode === 13 && input !== "") {
-                todoService.addTask(input, index);
-                $(".taskInput").val("");
+            if(key.keyCode === 13) {
+                if(noSpaces(input)) {
+                    todoService.addTask(input, index);
+                    $(".taskInput").val("");
+                } else {
+                    $(".taskInput").val("");
+                }
+
             }
         };
 
@@ -70,6 +79,15 @@
                 $("#taskWords" + index).removeClass("taskWordsComplete");
             }
 
+        };
+
+        function noSpaces(input) {
+            for(var i = 0; i < input.length; i++) {
+                if(input[i] !== " ") {
+                    return true;
+                }
+            }
+            return false;
         }
 
     }

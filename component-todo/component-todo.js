@@ -8,7 +8,7 @@
         controller: todoController
     });
 
-    function todoController(todoService, $scope) {
+    function todoController(todoService) {
         var fun = this;
         fun.buttonWords = "Edit Lists";
         fun.information = todoService.theTodos;
@@ -82,6 +82,10 @@
 
         fun.deleteTask = function(index, parentIndex) {
             todoService.deleteTask(index, parentIndex);
+        };
+
+        fun.clearCompletedTasks = function(index) {
+            todoService.clearCompletedTasks(index);
         };
 
 

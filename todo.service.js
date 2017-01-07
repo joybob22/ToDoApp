@@ -42,6 +42,18 @@
             serve.reapplyClasses(parentIndex);
         };
 
+        serve.clearCompletedTasks = function(index) {
+            var tasks = serve.theTodos[index].tasks;
+            var tasksComplete = serve.theTodos[index].tasksComplete;
+            for(var i = 0; i < tasks.length; i++) {
+                if(tasksComplete[i]) {
+                    tasks.splice(i, 1);
+                    tasksComplete.splice(i, 1);
+                    i--;
+                }
+            }
+        };
+
 
 
         serve.reapplyClasses = function(parentIndex) {

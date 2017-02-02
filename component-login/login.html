@@ -1,0 +1,13 @@
+<div id="loginContainer">
+    <h1 id="loginHeader">Login</h1>
+    <div class="loginElement">
+        <div class="divLabel"><label class="label">Email: </label></div>
+        <input ng-model="$ctrl.loginEmail" class="loginInput" type="text" placeholder="Email">
+    </div>
+    <div class="loginElement">
+        <div class="divLabel"><label class="label">Password: </label></div>
+        <input ng-model="$ctrl.loginPassword" class="loginInput" type="password" placeholder="Password">
+    </div>
+    <div id="loginButton" ng-click="$ctrl.loginUser($ctrl.loginEmail, $ctrl.loginPassword)">Login</div>
+    <p class="inputQuestion">Don't have an account? Login as <span class="link">guest</span> or <span class="link" ui-sref="register">register.</span></p>
+</div>

@@ -18,24 +18,52 @@ body {
 }
 
 #navBar {
+    box-sizing: border-box;
     width: 100%;
+    background-color: #B71C1C;
+    overflow: hidden;
+
 }
 
-.navItem {
+.navItem{
     float: left;
-    width: 50%;
-    text-align: center;
-    background-color: #800000;
+    box-sizing: border-box;
+    transition: color 0.7s;
+    font-size: 20px;
+    padding: 5px 5px;
+    font-family: Helvetica;
+    margin: 14px 0 0 20px;
+    color: #EEE;
+    opacity: 0.7;
+    letter-spacing: 2px;
+}
+
+.loginNavItem {
+    float: right;
+    margin-right: 35px;
+}
+
+.navTitle {
+    float: left;
     box-sizing: border-box;
     transition: all 0.7s;
-    font-size: 35px;
     padding: 5px 0;
     font-family: Helvetica;
+    font-size: 35px;
+    margin-left: 35px;
+    letter-spacing: 3px;
+    color: #FFF;
 }
 
 .navItem:hover {
-    background-color: #990000;
     cursor: pointer;
+    border-bottom: 5px solid #D50000;
+}
+
+.navSelectedItem {
+    border-bottom: 5px solid #FF5252;
+    box-sizing: border-box;
+    opacity: 1;
 }
 
 #homeHeader {
@@ -227,4 +255,91 @@ body {
 .words {
     text-align: left;
     margin-right: 60px;
+}
+
+#loginContainer, #registerContainer {
+    background-color: #C62828;
+    border-radius: 5px;
+    padding: 50px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+}
+
+#loginHeader, #registerHeader {
+    font-family: 'angelTears';
+    font-size: 50px;
+    width: 200px;
+    border-bottom: 1px solid #fff;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding-bottom: 6px;
+    color: #fff;
+    opacity: 0.5;
+    text-align: center;
+}
+
+.label {
+    color: #fff;
+    opacity: 0.5;
+    font-family: Helvetica;
+}
+
+.divLabel {
+    margin-bottom: 3px;
+}
+
+.loginElement {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.loginInput {
+    float: right;
+    width: 97%;
+    height: 20px;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    outline: none;
+}
+
+.inputQuestion {
+    color: white;
+    opacity: 0.5;
+    font-family: Helvetica;
+    margin-top: 10px;
+}
+
+.link {
+    text-decoration: underline;
+    color: #FF8A80;
+    transition: all 0.3s;
+}
+
+.link:hover {
+    color: #FFCCCC;
+    cursor: pointer;
+}
+
+#loginButton, #registerButton {
+    width: 100%;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #FF8A80;
+    padding: 7px;
+    box-sizing: border-box;
+    font-family: angelTears;
+    color: white;
+    font-size: 30px;
+    margin-top: 18px;
+    transition: all 0.3s;
+}
+
+#loginButton:hover, #registerButton:hover{
+    cursor: pointer;
+    background-color: #FF5252;
 }

@@ -8,8 +8,10 @@
     </head>
     <body ng-app="todoApp">
         <div id="navBar">
+            <div class="navTitle">TODO</div>
             <div class="navItem" ui-sref="home">Home</div>
-            <div class="navItem" ui-sref="todo">Todo</div>
+            <div class="navItem" ui-sref="todo">Lists</div>
+            <div class="navItem loginNavItem" ui-sref="login">Login</div>
         </div>
 
         <div ui-view style="height: 100%"></div>
@@ -18,8 +20,23 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.2.0/angularfire.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCttY-OroNui4WaHbEdu3DTYhmL_lbFsYI",
+            authDomain: "todoinfo-79dc6.firebaseapp.com",
+            databaseURL: "https://todoinfo-79dc6.firebaseio.com",
+            storageBucket: "todoinfo-79dc6.appspot.com",
+            messagingSenderId: "852101086908"
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="app.js"></script>
     <script src="todo.service.js"></script>
     <script src="component-home/component-home.js"></script>
     <script src="component-todo/component-todo.js"></script>
+    <script src="component-login/component-login.js"></script>
+    <script src="component-register/component-register.js"></script>
 </html>

@@ -7,13 +7,14 @@
 
         .service("todoService", theService);
 
-    function theService() {
+    function theService($mdToast) {
         var serve = this;
-        var id = 1;
-        var userId = null;
+        serve.userId = null;
         var registered = false;
         var firebaseTodos;
         var pushTodos;
+        serve.loginWords = "login";
+
 
         //---------------------------------------------------------------------------------------------------
         //  Registering and logging in a user
@@ -22,7 +23,16 @@
         serve.registerUser = function(email, password) {
             firebase.auth().createUserWithEmailAndPassword(email, password).then(registerSuccess, registerError);
             function registerSuccess(data) {
-                userId = data.uid;
+                serve.userId = data.uid;
+                serve.loginWords = "sign out";
+                $("#loginNav").text("Sign Out");
+                $mdToast.show(
+                    $mdToast.simple()
+                        .textContent('Registration Successful!')
+                        .position("top right")
+                        .theme('success-toast')
+                        .hideDelay(3000)
+                );
                 firebase.database().ref('users/' + data.uid).set({
                     firebaseTodos: [" "]
                 });
@@ -45,7 +55,17 @@
         serve.loginUser = function(email, password) {
             firebase.auth().signInWithEmailAndPassword(email, password).then(loginSuccess, loginError);
             function loginSuccess(data) {
-                userId = data.uid;
+                serve.loginWords = "sign out";
+                $("#loginNav").text("Sign Out");
+
+                $mdToast.show(
+                    $mdToast.simple()
+                        .textContent('Login Successful!')
+                        .position("top right")
+                        .theme('success-toast')
+                        .hideDelay(3000)
+                );
+                serve.userId = data.uid;
                 console.log(data);
                 console.log("Logged in!");
                 firebase.database().ref('/users/' + data.uid).once('value').then(function(snapshot) {
@@ -56,6 +76,13 @@
             }
             function loginError(error) {
                 console.log(error.message);
+                $mdToast.show(
+                    $mdToast.simple()
+                        .textContent(error.message)
+                        .position("top right")
+                        .theme('error-toast')
+                        .hideDelay(3000)
+                );
             }
         };
 
@@ -73,6 +100,30 @@
             }
         }
 
+        serve.logout = function() {
+                firebase.auth().signOut().then(function() {
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .textContent('Sign out successful!')
+                            .position("top right")
+                            .theme('success-toast')
+                            .hideDelay(3000)
+                    );
+                    $("#loginNav").text("Login");
+                    serve.theTodos = [];
+                    serve.loginWords = "login";
+                    serve.userId = null;
+                }, function(error) {
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .textContent('There was a problem signing out')
+                            .position("top right")
+                            .theme('error-toast')
+                            .hideDelay(3000)
+                    );
+                });
+        };
+
 
 
         //---------------------------------------------------------------------------------------------------
@@ -82,13 +133,9 @@
         serve.theTodos = [];
 
         serve.addList = function(input) {
-            serve.theTodos.push({"name": input, "id": setId(), "tasks": [], "tasksComplete": []});
+            serve.theTodos.push({"name": input, "tasks": [], "tasksComplete": []});
             updateFirebase(serve.theTodos);
-            id++;
             console.log(serve.theTodos);
-            function setId() {
-                return serve.theTodos.length + 1;
-            }
         };
 
         serve.removeList = function(index) {
@@ -155,7 +202,7 @@
             if(info.length === 0) {
                 info[0] = " ";
                 //push to firebase
-                firebase.database().ref('users/' + userId).set({
+                firebase.database().ref('users/' + serve.userId).set({
                     firebaseTodos: info
                 });
                 //take out spaces
@@ -173,9 +220,9 @@
 
                 //push to firebase
                 console.log(info);
-                console.log(userId);
+                console.log(serve.userId);
 
-                firebase.database().ref('users/' + userId).set({
+                firebase.database().ref('users/' + serve.userId).set({
                     firebaseTodos: info
                 });
                 //take out spaces

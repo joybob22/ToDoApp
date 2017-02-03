@@ -8,6 +8,6 @@
         <div class="divLabel"><label class="label">Password: </label></div>
         <input ng-model="$ctrl.registerPasswordInput" class="loginInput" type="password" placeholder="Password">
     </div>
-    <div id="registerButton" ng-click="$ctrl.validateRegisterForm($ctrl.registerEmailInput, $ctrl.registerPasswordInput)">Register</div>
+    <div id="registerButton" class="glow" ng-click="$ctrl.validateRegisterForm($ctrl.registerEmailInput, $ctrl.registerPasswordInput)">Register</div>
     <p class="inputQuestion">Already have an account? <span class="link" ui-sref="login">Login</span> or register as <span class="link">guest.</span></p>
 </div>

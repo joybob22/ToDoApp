@@ -3,9 +3,16 @@
  */
 (function () {
 
-    var app = angular.module("todoApp", ["ui.router", "firebase"]);
+    var app = angular.module("todoApp", ["ui.router", "firebase", "ngMaterial"]);
 
-    app.config(function($stateProvider, $urlRouterProvider) {
+    app.config(function($stateProvider, $urlRouterProvider, $mdThemingProvider) {
+        $mdThemingProvider.theme('success-toast')
+            .primaryPalette('green')
+            .accentPalette('orange');
+
+        $mdThemingProvider.theme('error-toast')
+            .primaryPalette('red')
+            .accentPalette('orange');
 
         $urlRouterProvider.otherwise("home");
 

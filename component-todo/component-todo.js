@@ -8,7 +8,7 @@
         controller: todoController
     });
 
-    function todoController(todoService) {
+    function todoController(todoService, $mdToast) {
         var fun = this;
         fun.buttonWords = "Edit Lists";
         fun.information = todoService.theTodos;
@@ -31,8 +31,18 @@
             var input = $("#createInput").val();
             if(key.keyCode == 13) {
                 if(noSpaces(input)) {
-                    todoService.addList(input);
-                    $("#createInput").val("");
+                        if (todoService.userId !== null) {
+                            todoService.addList(input);
+                            $("#createInput").val("");
+                        } else {
+                            $mdToast.show(
+                                $mdToast.simple()
+                                    .textContent("Must be signed in to create a list.")
+                                    .position("top right")
+                                    .theme('error-toast')
+                                    .hideDelay(3000)
+                            );
+                        }
                 } else {
                     $("#createInput").val("");
                 }

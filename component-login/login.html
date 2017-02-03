@@ -8,6 +8,6 @@
         <div class="divLabel"><label class="label">Password: </label></div>
         <input ng-model="$ctrl.loginPassword" class="loginInput" type="password" placeholder="Password">
     </div>
-    <div id="loginButton" ng-click="$ctrl.loginUser($ctrl.loginEmail, $ctrl.loginPassword)">Login</div>
+    <div id="loginButton" class="glow" ng-click="$ctrl.loginUser($ctrl.loginEmail, $ctrl.loginPassword)">Login</div>
     <p class="inputQuestion">Don't have an account? Login as <span class="link">guest</span> or <span class="link" ui-sref="register">register.</span></p>
 </div>

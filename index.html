@@ -3,21 +3,27 @@
     <head>
         <meta charset="UTF-8">
         <title>ToDo App</title>
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.0.9/angular-material.min.css">
         <script src="https://use.fontawesome.com/e072cb777c.js"></script>
         <link rel="stylesheet" href="main.css">
     </head>
     <body ng-app="todoApp">
-        <div id="navBar">
+        <div id="navBar" ng-controller="mainController as vm">
             <div class="navTitle">TODO</div>
             <div class="navItem" ui-sref="home">Home</div>
             <div class="navItem" ui-sref="todo">Lists</div>
-            <div class="navItem loginNavItem" ui-sref="login">Login</div>
+            <div id="loginNav" class="navItem loginNavItem glow" ui-sref="login" ng-click="vm.logout()">Login</div>
         </div>
 
         <div ui-view style="height: 100%"></div>
 
     </body>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-aria.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-messages.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.0.9/angular-material.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.2.0/angularfire.min.js"></script>
@@ -35,6 +41,7 @@
     </script>
     <script src="app.js"></script>
     <script src="todo.service.js"></script>
+    <script src="mainController.js"></script>
     <script src="component-home/component-home.js"></script>
     <script src="component-todo/component-todo.js"></script>
     <script src="component-login/component-login.js"></script>

@@ -65,9 +65,6 @@
                     serve.theTodos = [];
 
 
-                    console.log(data);
-
-                    console.log('users/' + data.uid);
 
                 }
                 function registerError(error) {
@@ -99,16 +96,12 @@
                         .hideDelay(3000)
                 );
                 serve.userId = data.uid;
-                console.log(data);
-                console.log("Logged in!");
                 firebase.database().ref('/users/' + data.uid).once('value').then(function(snapshot) {
-                    console.log(snapshot.val().firebaseTodos);
                     firebaseTodos = snapshot.val().firebaseTodos;
                     takeOutSpaces(firebaseTodos);
                 });
             }
             function loginError(error) {
-                console.log(error.message);
                 $mdToast.show(
                     $mdToast.simple()
                         .textContent(error.message)
@@ -191,7 +184,6 @@
         serve.addList = function(input) {
             serve.theTodos.push({"name": input, "tasks": [], "tasksComplete": []});
             updateFirebase(serve.theTodos);
-            console.log(serve.theTodos);
         };
 
         serve.removeList = function(index) {
@@ -275,8 +267,6 @@
                 }
 
                 //push to firebase
-                console.log(info);
-                console.log(serve.userId);
 
                 firebase.database().ref('users/' + serve.userId).set({
                     firebaseTodos: info

@@ -7,7 +7,7 @@
 
         <div ng-repeat="info in $ctrl.information">
             <div id="listItem{{$index + 1}}" class="listTitles glow" ng-click="$ctrl.select($index + 1)">
-                <span class="fa fa-times glow" ng-if="$ctrl.editingLists" ng-click="$ctrl.removeList($index)"></span><span > {{info.name}}</span>
+                <span class="fa fa-times glow" ng-if="$ctrl.editingLists" ng-click="$ctrl.removeList($index)"></span><span > {{info.name | case}}</span>
             </div>
         </div>
     </div>
@@ -23,13 +23,13 @@
             <div ng-if="$ctrl.selected === ($index + 1)">
                 <div class="removeListButton glow" ng-click="$ctrl.removingListOptions()">{{$ctrl.buttonWords}}</div>
                 <div class="clearCompletedButton glow" ng-click="$ctrl.clearCompletedTasks($index)">Clear Completed Tasks</div>
-                <h1 class="todoHeader">{{info.name}}</h1>
+                <h1 class="todoHeader">{{info.name | case}}</h1>
                 <div class="taskContainer">
                     <input class="taskInput" type="text" placeholder="What needs to be done?" ng-keyup="$ctrl.addTask($event, $index)">
                     <div ng-repeat="task in $ctrl.information[$index].tasks track by $index">
                         <div class="tasks">
                             <span id="completeCheckbox{{$index}}" class="completeCheckbox glow" ng-class="{checkBoxComplete: $ctrl.information[$parent.$index].tasksComplete[$index]}" ng-click="$ctrl.markComplete($index, $parent.$index)"></span>
-                            <p id="taskWords{{$index}}" class="words" ng-class="{taskWordsComplete: $ctrl.information[$parent.$index].tasksComplete[$index]}">{{task}}</p>
+                            <p id="taskWords{{$index}}" class="words" ng-class="{taskWordsComplete: $ctrl.information[$parent.$index].tasksComplete[$index]}">{{task | case}}</p>
                             <span class="fa fa-times deleteTask glow" ng-click="$ctrl.deleteTask($index, $parent.$index)"></span>
                         </div>
                     </div>

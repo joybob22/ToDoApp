@@ -21,35 +21,68 @@
         //---------------------------------------------------------------------------------------------------
 
         serve.registerUser = function(email, password) {
-            firebase.auth().createUserWithEmailAndPassword(email, password).then(registerSuccess, registerError);
-            function registerSuccess(data) {
-                serve.userId = data.uid;
-                serve.loginWords = "sign out";
-                $("#loginNav").text("Sign Out");
-                $mdToast.show(
-                    $mdToast.simple()
-                        .textContent('Registration Successful!')
-                        .position("top right")
-                        .theme('success-toast')
-                        .hideDelay(3000)
-                );
-                firebase.database().ref('users/' + data.uid).set({
-                    firebaseTodos: [" "]
+            if(serve.userId !== null) {
+                var credential = firebase.auth.EmailAuthProvider.credential(email, password);
+                firebase.auth().currentUser.link(credential).then(function(user) {
+                    serve.loginWords = "sign out";
+                    $("#loginNav").text("Sign Out");
+                    serve.userId = user.uid;
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .textContent('Registration Successful! All work will now be saved.')
+                            .position("top right")
+                            .theme('success-toast')
+                            .hideDelay(5000)
+                    );
+                }, function(error) {
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .textContent(error.message)
+                            .position("top right")
+                            .theme('error-toast')
+                            .hideDelay(3000)
+                    );
                 });
-                // var ref = firebase.database().ref().child(uid);
-                // serve.firebaseTodos = $firebaseArray(ref);
-                // serve.theTodos = serve.firebaseTodos;
-                serve.theTodos = [];
+            } else {
+                firebase.auth().createUserWithEmailAndPassword(email, password).then(registerSuccess, registerError);
+                function registerSuccess(data) {
+                    serve.userId = data.uid;
+                    serve.loginWords = "sign out";
+                    $("#loginNav").text("Sign Out");
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .textContent('Registration Successful!')
+                            .position("top right")
+                            .theme('success-toast')
+                            .hideDelay(3000)
+                    );
+                    firebase.database().ref('users/' + data.uid).set({
+                        firebaseTodos: [" "]
+                    });
+                    // var ref = firebase.database().ref().child(uid);
+                    // serve.firebaseTodos = $firebaseArray(ref);
+                    // serve.theTodos = serve.firebaseTodos;
+                    serve.theTodos = [];
 
 
-                console.log(data);
+                    console.log(data);
 
-                console.log('users/' + data.uid);
+                    console.log('users/' + data.uid);
+
+                }
+                function registerError(error) {
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .textContent(error.message)
+                            .position("top right")
+                            .theme('error-toast')
+                            .hideDelay(3000)
+                    );
+                }
+
 
             }
-            function registerError(error) {
-                console.log(error.message);
-            }
+
         };
 
         serve.loginUser = function(email, password) {
@@ -76,6 +109,29 @@
             }
             function loginError(error) {
                 console.log(error.message);
+                $mdToast.show(
+                    $mdToast.simple()
+                        .textContent(error.message)
+                        .position("top right")
+                        .theme('error-toast')
+                        .hideDelay(3000)
+                );
+            }
+        };
+
+        serve.makeGuest = function() {
+            firebase.auth().signInAnonymously().then(guestSuccess, guestError);
+            function guestSuccess(user) {
+                serve.userId = user.uid;
+                $mdToast.show(
+                    $mdToast.simple()
+                        .textContent('Guest login successful, if you would like to save any work changes at any time go to the register page to make an account.')
+                        .position("top right")
+                        .theme('success-toast')
+                        .hideDelay(10000)
+                );
+            }
+            function guestError(error) {
                 $mdToast.show(
                     $mdToast.simple()
                         .textContent(error.message)

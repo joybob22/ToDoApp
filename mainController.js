@@ -1,6 +1,6 @@
 (function() {
 
-    angular.module("todoApp").controller("mainController", function(todoService) {;
+    angular.module("todoApp").controller("mainController", function(todoService) {
         var vm = this;
 
         vm.logout = function() {

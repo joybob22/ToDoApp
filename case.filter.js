@@ -8,8 +8,6 @@
                 for(var i = 0; i < output.length; i++) {
                     if(i === 0) {
                         temp = output.slice(i,1);
-                        console.log(temp);
-                        console.log(output);
                         temp = temp.toUpperCase();
                         output = temp + output.slice(i + 1);
                     } else {

@@ -61,10 +61,8 @@
 
         fun.removeList = function(index) {
             todoService.removeList(index);
-            if(fun.selected === (index + 1)) {
-                $("#listItem" + fun.selected).removeClass("selected");
+            if(fun.selected >= (index + 1)) {
                 fun.selected--;
-                $("#listItem" + fun.selected).addClass("selected");
             }
         };
 

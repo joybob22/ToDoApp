@@ -1,12 +1,12 @@
 <div id="todoContainer">
     <div id="listOfLists">
         <h1 id="listsHeader">Your Lists</h1>
-            <div id="listItem0" class="listTitles glow" ng-click="$ctrl.select(0)">
+            <div id="listItem0" class="listTitles glow" ng-click="$ctrl.select(0)" ng-class="{selected: $ctrl.selected === 0}">
                 <span>Create a List</span>
             </div>
 
         <div ng-repeat="info in $ctrl.information">
-            <div id="listItem{{$index + 1}}" class="listTitles glow" ng-click="$ctrl.select($index + 1)">
+            <div id="listItem{{$index + 1}}" class="listTitles glow" ng-click="$ctrl.select($index + 1)" ng-class="{selected: $ctrl.selected === {{$index + 1}}}">
                 <span class="fa fa-times glow" ng-if="$ctrl.editingLists" ng-click="$ctrl.removeList($index)"></span><span > {{info.name | case}}</span>
             </div>
         </div>

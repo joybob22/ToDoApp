@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ed9bd883-258b-4fbc-903a-4413b51f4b6c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.css" afterPath="$PROJECT_DIR$/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/component-todo/component-todo.js" afterPath="$PROJECT_DIR$/component-todo/component-todo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/component-todo/todo.html" afterPath="$PROJECT_DIR$/component-todo/todo.html" />
     </list>
     <ignored path="ToDoProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,7 +27,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="366">
@@ -49,7 +50,7 @@
       <file leaf-file-name="todo.service.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/todo.service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
+            <state relative-caret-position="15">
               <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding>
                 <element signature="e#0#45#0" expanded="false" />
@@ -58,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="component-todo.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="component-todo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/component-todo/component-todo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="39" column="44" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="44" />
+            <state relative-caret-position="255">
+              <caret line="63" column="45" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="45" />
               <folding>
                 <element signature="e#0#45#0" expanded="false" />
               </folding>
@@ -70,24 +71,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="component-login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/component-login/component-login.js">
+      <file leaf-file-name="todo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/component-todo/todo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="39" column="44" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#46#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="45">
+              <caret line="3" column="125" selection-start-line="3" selection-start-column="125" selection-end-line="3" selection-end-column="125" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/component-login/login.html">
+      <file leaf-file-name="component-login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/component-login/component-login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="181" selection-start-line="8" selection-start-column="104" selection-end-line="8" selection-end-column="181" />
-              <folding />
+            <state relative-caret-position="15">
+              <caret line="39" column="44" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#46#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,9 +159,7 @@
         <option value="$PROJECT_DIR$/component-home/component-home.js" />
         <option value="$PROJECT_DIR$/finishRenderingDirective.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/component-todo/component-todo.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/component-todo/todo.html" />
         <option value="$PROJECT_DIR$/component-home/home.html" />
         <option value="$PROJECT_DIR$/component-login/login.html" />
         <option value="$PROJECT_DIR$/component-login/component-login.js" />
@@ -170,6 +169,8 @@
         <option value="$PROJECT_DIR$/mainController.js" />
         <option value="$PROJECT_DIR$/case.filter.js" />
         <option value="$PROJECT_DIR$/main.css" />
+        <option value="$PROJECT_DIR$/component-todo/todo.html" />
+        <option value="$PROJECT_DIR$/component-todo/component-todo.js" />
       </list>
     </option>
   </component>
@@ -407,12 +408,12 @@
       <workItem from="1486132297628" duration="5081000" />
       <workItem from="1486164093833" duration="5009000" />
       <workItem from="1486233692859" duration="4281000" />
-      <workItem from="1486391638879" duration="78000" />
+      <workItem from="1486391638879" duration="1688000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107542000" />
+    <option name="totallyTimeSpent" value="109152000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="984" extended-state="6" />
@@ -770,14 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/component-todo/todo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="143" selection-start-line="9" selection-start-column="143" selection-end-line="9" selection-end-column="143" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/component-login/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -791,26 +784,6 @@
         <state relative-caret-position="120">
           <caret line="8" column="166" selection-start-line="8" selection-start-column="166" selection-end-line="8" selection-end-column="166" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/component-todo/component-todo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="39" column="44" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/component-login/component-login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="39" column="44" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#46#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -829,16 +802,6 @@
         <state relative-caret-position="75">
           <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/todo.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -863,6 +826,44 @@
         <state relative-caret-position="366">
           <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#45#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component-todo/todo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="125" selection-start-line="3" selection-start-column="125" selection-end-line="3" selection-end-column="125" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component-login/component-login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="39" column="44" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#46#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component-todo/component-todo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="63" column="45" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#45#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

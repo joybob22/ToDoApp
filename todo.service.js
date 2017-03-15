@@ -248,13 +248,10 @@
         };
         function updateFirebase(info) {
             if(info.length === 0) {
-                info[0] = " ";
                 //push to firebase
                 firebase.database().ref('users/' + serve.userId).set({
-                    firebaseTodos: info
+                    firebaseTodos: " "
                 });
-                //take out spaces
-                return takeOutInfoSpaces(info);
             } else {
                 for(var i = 0; i < info.length; i++) {
                     if(info[i].$$hashKey) {
@@ -275,7 +272,7 @@
                 return takeOutInfoSpaces(info);
             }
             function takeOutInfoSpaces(newInfo) {
-                if(newInfo.length === 1 && newInfo[1] === " ") {
+                if(newInfo.length === 1 && newInfo[0] === " ") {
                     newInfo = [];
                     return newInfo;
                 } else {
